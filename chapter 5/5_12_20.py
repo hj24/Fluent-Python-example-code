@@ -52,3 +52,10 @@ def clip(text: str, max_len: 'int > 0'=80) -> str:
 
 print(clip.__annotations__)
 
+def f(name, *, val=666):
+	print(name, val)
+f('hj')
+
+for name, param in signature(f).parameters.items():
+	print(param.kind, name, param.default)
+
